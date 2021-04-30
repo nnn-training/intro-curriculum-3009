@@ -3,11 +3,11 @@ const fs = require('fs');
 const fileName = './test.txt';
 
 //appendFileSync
-/*for (let count = 0; count < 30; count++) {
+for (let count = 0; count < 30; count++) {
   fs.appendFileSync(fileName, 'おはようございます\n', 'utf8');
   fs.appendFileSync(fileName, 'こんにちは\n', 'utf8');
   fs.appendFileSync(fileName, 'こんばんは\n', 'utf8');
-}*/ 
+}
 
 //Promise and async/await
 function appendFilePromise(fileName, str) {
@@ -36,11 +36,11 @@ main();
 
 //async/await
 
-/*async function main() {
+async function main() {
   for (let count = 0; count < 30; count++) {
     await appendFilePromise(fileName, 'おはようございます\n');
     await appendFilePromise(fileName, 'こんにちは\n');
     await appendFilePromise(fileName, 'こんばんは\n');
   }
 }
-main();*/
+main();
