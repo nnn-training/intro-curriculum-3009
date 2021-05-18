@@ -13,13 +13,6 @@ async function main() {
     await appendFilePromise(fileName, 'おはようございます\n');
     await appendFilePromise(fileName, 'こんにちは\n');
     await appendFilePromise(fileName, 'こんばんは\n');
-/*
-    appendFilePromise(fileName, 'おはようございます\n').then(() => {
-      return appendFilePromise(fileName, 'こんにちは\n');
-    }).then(() => {
-      return appendFilePromise(fileName, 'こんばんは\n');
-    });
-*/
   }
 }
 
