@@ -30,7 +30,7 @@ function mainPromise(){
   }
 }
 
-// async/awaitを組み合わせた例
+// async/awaitを組み合わせた場合
 async function mainAsync(){
   for (let i = 0; i < 30; i++) {
     await appendFilePromise(fileName, 'おはようございます\n', 'utf8', () => {});
