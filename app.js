@@ -43,4 +43,4 @@ new Promise((resolve) => {
   mainPromise();
 }).then(() => {
   mainAsync();
-})
+});
