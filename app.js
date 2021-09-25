@@ -3,6 +3,7 @@ const fs = require('fs');
 const fileName = './test.txt';
 const afsfileName = './test2.txt';
 const promiseFileName = './test3.txt';
+
 for (let count = 0; count < 30; count++) {
   fs.appendFile(fileName, 'おはようございます\n', 'utf8', () => {});
   fs.appendFile(fileName, 'こんにちは\n', 'utf8', () => {});
@@ -33,3 +34,26 @@ async function main(){
 
 main();
 
+//Promiseのみを使った書き方
+const promiseNomiFileName = './test4.txt';
+function appnedFilePromiseNomi(promiseNomiFileName,str) {
+  return new Promise((resolve) => {
+    fs.appendFile(promiseNomiFileName,str,'utf8', () => resolve());
+  });
+}
+function mainPromise(){
+  let promiseChain = Promise.resolve(); //Promiseチェーンを記憶する変数
+  for(let count = 0; count < 500; count++) {
+    promiseChain = promiseChain
+    .then(() => {
+      return appnedFilePromiseNomi(promiseNomiFileName,'おはようございます\n');
+    })
+    .then(() => {
+      return appnedFilePromiseNomi(promiseNomiFileName,'こんにちは\n');
+    }).then(() => {
+      return appnedFilePromiseNomi(promiseNomiFileName,'こんばんは\n');
+    });
+  }
+}
+
+mainPromise();
