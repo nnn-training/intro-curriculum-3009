@@ -1,3 +1,5 @@
+//練習問題 非同期処理の状態
+
 'use strict';
 const fs = require('fs');
 const fileName = './test.txt';
