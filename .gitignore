@@ -1,3 +1,5 @@
 test.txt
 
 *.log
+test_async_await.txt
+test_promise.txt
