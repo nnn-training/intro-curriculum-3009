@@ -7,10 +7,10 @@ function appendFilePromise(fileName, str) {
   });
 }
 async function main() {
-  for (let count = 0; count < 30; count++) {
-    await appendFilePromise(fileName, 'おはようございます\n', 'utf8', () => { });
-    await appendFilePromise(fileName, 'こんにちは\n', 'utf8', () => { });
-    await appendFilePromise(fileName, 'こんばんは\n', 'utf8', () => { });
-  };
-};
+  for (let count = 0; count < 500; count++) {
+    await appendFilePromise(fileName, 'おはようございます\n');
+    await appendFilePromise(fileName, 'こんにちは\n');
+    await appendFilePromise(fileName, 'こんばんは\n');
+  }
+}
 main();
