@@ -1,9 +1,9 @@
-'use strict';
-const fs = require('node:fs');
+'use strict'
+const fs = require('node:fs').promises
 
-function cat(fileName) {
-  const content = fs.readFile(fileName, 'utf8', () => {});
-  console.log(content);
+async function cat(fileName) {
+  const content = await fs.readFile(fileName, 'utf8')
+  console.log(content)
 }
 
-cat(process.argv[2]);
+cat(process.argv[2])
